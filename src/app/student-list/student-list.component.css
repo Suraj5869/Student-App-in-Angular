@@ -1,0 +1,20 @@
+#new{
+    float: right;
+    margin-right: 50px;
+}
+table{
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+table, th, td{
+    border: 1px solid black;
+    text-align: center;
+}
+th{
+    padding: 10px;
+    background-color: aquamarine;
+}
+.btn{
+    margin: 5px;
+}

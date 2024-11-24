@@ -1,17 +1,30 @@
-Add new student
-
+<h1>Add New Student</h1>
 <form [formGroup]="newStudentForm" (ngSubmit)="addNewStudent()">
-    <input type="number" placeholder="Enter Roll Number" formControlName="rollNo">
-    <br><br>
-    <input type="text" placeholder="Enter Name" formControlName="name">
-    <br><br>
-    <input type="number" placeholder="Enter Age" formControlName="age">
-    <br><br>
-    <input type="text" placeholder="Enter Email" formControlName="email">
-    <br><br>
-    <input type="date" placeholder="Enter Date" formControlName="date">
-    <br><br>
-    <input type="checkbox" formControlName="isMale"> IsMale
-    <br><br>
-    <button>Add</button>
+    <div class="form-floating mb-3">
+        <input type="number" class="form-control" placeholder="Enter Roll Number" formControlName="rollNo">
+        <label for="floatingInput">Roll No</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" placeholder="Enter Name" formControlName="name">
+        <label for="floatingInput">Name</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="number" class="form-control" placeholder="Enter Age" formControlName="age">
+        <label for="floatingInput">Age</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" placeholder="Enter Email" formControlName="email">
+        <label for="floatingInput">Email</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="date" class="form-control" placeholder="Enter Date" formControlName="date">
+        <label for="floatingInput">Date</label>
+    </div>
+    <div class="form-check">
+        <input type="checkbox" class="form-check-input" formControlName="isMale">
+        <label class="form-check-label">
+            IsMale
+        </label>
+    </div>
+    <button class="btn btn-primary mb-3">Add</button>
 </form>

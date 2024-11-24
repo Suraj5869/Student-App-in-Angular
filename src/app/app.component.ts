@@ -6,7 +6,7 @@ import { StudentService } from './services/student.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Student-App';
+  title = 'Student Detail App';
   
   constructor(private studentService:StudentService){
     

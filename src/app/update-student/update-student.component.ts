@@ -3,6 +3,7 @@ import { StudentService } from '../services/student.service';
 import { ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Student } from '../student.model';
 
 @Component({
   selector: 'app-update-student',
@@ -11,34 +12,33 @@ import { Router } from '@angular/router';
 })
 export class UpdateStudentComponent implements OnInit{
   studentId: any;
-
-  oldStudentForm : FormGroup;
+  studentData: any;
+  oldStudentForm = new FormGroup({
+    rollNo: new FormControl(),
+    name: new FormControl(),
+    age: new FormControl(),
+    email: new FormControl(),
+    date: new FormControl(),
+    isMale: new FormControl()
+  });
 
  constructor(private studentService: StudentService, private route: ActivatedRoute, private fb: FormBuilder, private router: Router){
-  this.oldStudentForm = this.fb.group({
-    rollNo: [''],
-    name: [''],
-    age: [''],
-    email: [''],
-    date: [''],
-    isMale: [false]
-  });
   }
 
  ngOnInit(): void {
   this.studentId = this.route.snapshot.paramMap.get('id');
-    this.studentService.getStudent(this.studentId).subscribe((student) => {
-      console.log('Student:', student);
-      
+    this.studentService.getStudent(this.studentId).subscribe((data:any) => {
+      this.studentData = data[0];
+      console.log(this.studentData);
 
-      // this.oldStudentForm.patchValue({
-      //   rollNo: student.rollNo,
-      //   name: student.name,
-      //   age: student.age,
-      //   email: student.email,
-      //   date: student.date,
-      //   isMale: student.isMale
-      // });
+      this.oldStudentForm.patchValue({
+        rollNo: this.studentData.rollNo,
+        name: this.studentData.name,
+        age: this.studentData.age,
+        email: this.studentData.email,
+        date: this.studentData.date,
+        isMale: this.studentData.isMale
+      });
     });
   
  }

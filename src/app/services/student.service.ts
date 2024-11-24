@@ -22,8 +22,8 @@ export class StudentService {
     return this.http.delete(`${this.url}/${id}`);
   }
 
-  getStudent(id:any){
-    const student =  this.http.get(`${this.url}/${id}`);
+  getStudent(id:any): Observable<Student>{
+    const student =  this.http.get<Student>(`${this.url}/${id}`);
     return student;
   }
   updateStudent(id:any, updatedStudentData:any){

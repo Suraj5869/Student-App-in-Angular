@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { StudentListComponent } from './student-list/student-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UpdateStudentComponent } from './update-student/update-student.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { UpdateStudentComponent } from './update-student/update-student.componen
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

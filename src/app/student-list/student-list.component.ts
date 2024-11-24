@@ -27,7 +27,6 @@ export class StudentListComponent {
     }
     
     sendData(id:any){
-      // console.log(id);
       this.router.navigate(['updateStudent/'+`${id}`]);
     }
   }
